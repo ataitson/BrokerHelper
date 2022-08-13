@@ -1,0 +1,14 @@
+{
+  "resourceName": "clientfiles",
+  "policyUUID": "7f6f9595",
+  "bucketName": "brokermanager517e55b959b54aeda1734b092a51fe32",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

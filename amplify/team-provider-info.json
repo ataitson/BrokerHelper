@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-brokermanager-staging-64903-authRole",
+      "UnauthRoleArn": "arn:aws:iam::958352768724:role/amplify-brokermanager-staging-64903-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::958352768724:role/amplify-brokermanager-staging-64903-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-brokermanager-staging-64903-deployment",
+      "UnauthRoleName": "amplify-brokermanager-staging-64903-unauthRole",
+      "StackName": "amplify-brokermanager-staging-64903",
+      "StackId": "arn:aws:cloudformation:ca-central-1:958352768724:stack/amplify-brokermanager-staging-64903/b314e300-0fd3-11ed-96e9-0234fea36e06",
+      "AmplifyAppId": "d3623mo3dgauxo"
+    },
+    "categories": {
+      "auth": {
+        "BrokerManager": {}
+      },
+      "function": {
+        "S3Trigger11c9798f": {
+          "deploymentBucketName": "amplify-brokermanager-staging-64903-deployment",
+          "s3Key": "amplify-builds/S3Trigger11c9798f-5774424638776c575277-build.zip"
+        }
+      }
+    }
+  }
+}
