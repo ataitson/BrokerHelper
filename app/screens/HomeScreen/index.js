@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, useWindowDimensions, View, ScrollView } from 'react-native';
+import { Dimensions, Image, ImageBackground, StyleSheet, Text, useWindowDimensions, View, ScrollView } from 'react-native';
 import { Auth } from 'aws-amplify';
 import { useNavigation } from '@react-navigation/native';
 import CustomImageButton from '../../components/CustomImageButton';
@@ -10,9 +10,12 @@ import FinancialControl from '../../assets/financialControl.png';
 import NewProcess from '../../assets/newProcess.png';
 import Dashboard from '../../assets/dashboard.png';
 import ForecastGraph from '../../components/ForecastGraph';
+import Summary from '../../components/Summary';
 
 function HomeScreen(props) {
     const navigation = useNavigation();
+    const windowWidth = Dimensions.get('window').width;
+    const windowHeight = Dimensions.get('window').height;
     
     const signOut = () => {
         Auth.signOut();
@@ -26,17 +29,16 @@ function HomeScreen(props) {
         navigation.navigate('BookOfBusinessOne');
     }
 
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.hamburger}></View>
-                <View style={styles.graphics}>
-                    <ForecastGraph />
+                <View name='graphics' style={styles.graphics}>
+                    <ForecastGraph graphHeight={windowHeight} />
                 </View>
             </View>
             <View style={styles.summary}>
-
+                <Summary />
             </View>
             <View style={styles.navigation}>
                 <CustomImageButton source={NewUser} onPress={onNewClientPressed}></CustomImageButton>
@@ -58,7 +60,6 @@ const styles = StyleSheet.create({
     graphics:{
         width: '100%',
         height: '100%',
-        backgroundColor: 'red'
     },
     hamburger: {
         width: '33%',
@@ -87,11 +88,6 @@ const styles = StyleSheet.create({
     },
     summary: {
         flex: 3,
-        //backgroundColor: 'blue',
-        height: '50%',
-        marginTop: 15,
-        marginLeft: 15,
-        marginRight: 15
     }
 })
 

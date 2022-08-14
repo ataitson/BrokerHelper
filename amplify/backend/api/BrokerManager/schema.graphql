@@ -7,6 +7,7 @@ type PolicyHome @model @auth(rules: [{allow: public}]) {
   client_id: String
   broker_id: String
   policy_value: Float
+  renewal_date: AWSDate
 }
 
 type PolicyCar @model @auth(rules: [{allow: public}]) {
@@ -20,6 +21,7 @@ type PolicyCar @model @auth(rules: [{allow: public}]) {
   broker_id: String
   vehicle_VIN: String
   policy_value: Float
+  renewal_date: AWSDate
 }
 
 type Files @model @auth(rules: [{allow: public}]) {

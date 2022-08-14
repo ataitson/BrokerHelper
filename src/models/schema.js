@@ -59,6 +59,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "renewal_date": {
+                    "name": "renewal_date",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -171,6 +178,13 @@ export const schema = {
                     "name": "policy_value",
                     "isArray": false,
                     "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "renewal_date": {
+                    "name": "renewal_date",
+                    "isArray": false,
+                    "type": "AWSDate",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -530,5 +544,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "af16af8779ba4eaa5e95e8f908c58c23"
+    "version": "026e71f4b4124a3faab772cc4110dceb"
 };

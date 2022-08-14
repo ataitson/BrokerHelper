@@ -33,6 +33,7 @@ export declare class PolicyHome {
   readonly client_id?: string | null;
   readonly broker_id?: string | null;
   readonly policy_value?: number | null;
+  readonly renewal_date?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<PolicyHome, PolicyHomeMetaData>);
@@ -50,6 +51,7 @@ export declare class PolicyCar {
   readonly broker_id?: string | null;
   readonly vehicle_VIN?: string | null;
   readonly policy_value?: number | null;
+  readonly renewal_date?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<PolicyCar, PolicyCarMetaData>);
