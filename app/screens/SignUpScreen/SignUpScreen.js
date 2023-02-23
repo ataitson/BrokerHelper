@@ -91,7 +91,7 @@ function SignUpScreen(props) {
                     <Text style={styles.link} onPress={onPrivacyPolicyPressed}>Privacy Policy</Text>
                 </Text>                  
                 <CustomButton text={loading ? 'Processing...' : 'Register'} onPress={loading ? null : handleSubmit(onRegisterPressed)}/>
-                <CustomButton text={'Have an account? Sign in?'} onPress={onSignInPressed} type='tertiary'/>        
+                <CustomButton text={'Have an account? Sign in'} onPress={onSignInPressed} type='tertiary'/>        
 
                 
         </ScrollView>

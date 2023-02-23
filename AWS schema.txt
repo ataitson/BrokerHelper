@@ -1,0 +1,59 @@
+type PolicyHome @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  street_number: String
+  street_name: String
+  unit_number: String
+  postal_code: String
+  client_id: String
+  broker_id: String
+  policy_value: Float
+  renewal_date: AWSDate
+}
+
+type PolicyCar @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  client_id: String
+  vehicle_make: String
+  vehicle_model: String
+  vehicle_year: String
+  wheel_drive: String
+  registered_owner: String
+  broker_id: String
+  vehicle_VIN: String
+  policy_value: Float
+  renewal_date: AWSDate
+}
+
+type Files @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  client_id: String
+  file_type_i: String
+  file_name: String
+  file_url: String
+  file_extension: String
+}
+
+type FileType @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  file_type_name: String
+}
+
+type Client @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  broker_id: String
+  name: String!
+  driver_licence: String
+  address: String
+  city: String
+  unit: String
+  postal_code: String
+  email: String
+  phone_number: String
+  prior_insurance: String
+  minor_tickets: String
+  major_suspensions: String
+  criminal_violations: String
+  current_policy_date: String
+  notes: [String]
+  quote_completed: Boolean
+}

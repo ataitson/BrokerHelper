@@ -67,7 +67,7 @@ function WelcomeScreen(props) {
                 secure />
                                 
                 <CustomButton text={loading ? 'Signing In' : 'Sign In'} onPress={loading ? null : handleSubmit(onSignInPressed)}/>
-                <CustomButton text={'Forgot password?'} onPress={onForgotPasswordPressed} type='tertiary'/>                          
+                <CustomButton text={'Forgot password'} onPress={onForgotPasswordPressed} type='tertiary'/>                          
         </ScrollView>
 
     );

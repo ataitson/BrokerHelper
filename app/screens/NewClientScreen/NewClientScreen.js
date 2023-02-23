@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { Auth, DataStore } from 'aws-amplify';
 import {Client} from '../../../src/models';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
-import BackButton from '../../assets/backButton.png';
+import BackButton from '../../components/BackButton';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
@@ -75,12 +75,13 @@ function NewClientScreen(props) {
 
     return (
         <>
-            <Pressable style={{flex: 0.15, alignItems: 'flex-start', justifyContent: 'center', paddingLeft: 15}} onPress={onBackPressed}>
-                <Image style={styles.backButton} source={BackButton}></Image>
-            </Pressable>
-            <ScrollView style={styles.scrollView} contentContainerStyle={styles.root}>            
-                <Text style={styles.title}> Adding a new client </Text>
-
+            <ScrollView style={styles.scrollView} contentContainerStyle={styles.root}>   
+                <View style={styles.header}>
+                    <BackButton />
+                    <View style={styles.headerDetails}>
+                        <Text style={styles.title}>Adding a new client</Text>
+                    </View>       
+                </View>    
                 <CustomInput name='name' placeholder={'Name'} rules={{
                         required: 'Name is required'}} control={control} />
                             
@@ -135,7 +136,6 @@ function NewClientScreen(props) {
                 <CustomInput name='criminalViolations' placeholder={'Criminal violations last 10 years'} control={control} numeric/>                
 
                 <CustomButton text={loading ? 'Saving...' : 'Save'} onPress={loading ? null : handleSubmit(onSavePressed)}/>
-                <CustomButton text={'Have an account? Sign in?'} onPress={onSignInPressed} type='tertiary'/>                        
             </ScrollView>
         </>
         
@@ -144,21 +144,25 @@ function NewClientScreen(props) {
 }
 
 const styles = StyleSheet.create({
-    backButton: {
-        tintColor: '#051C60',
-        resizeMode: 'contain',
-        width: 50,
-        height: 50
+    header:{
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+    },
+    headerDetails:{
+        width: '100%',
+        height: 100,
+        justifyContent: 'center',
+        flexWrap: 'wrap', 
     },
     link: {
         color: '#FDB075'
     },
     scrollView: {
-        height: '20%',
         width: '100%',
-        margin: 20,
         alignSelf: 'center',
-        padding: 20,
+        paddingLeft: 20,
+        paddingRight: 20,
     },    
     root: {
         alignItems: 'center',

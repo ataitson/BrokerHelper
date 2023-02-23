@@ -48,7 +48,7 @@ function HomeScreen(props) {
                 <CustomImageButton source={NewProcess}></CustomImageButton>
                 <CustomImageButton source={Dashboard}></CustomImageButton>
             </View>
-            {/* <Text style={styles.signOut} onPress={signOut}> Sign Out </Text> */}
+            <Text style={styles.signOut} onPress={signOut}> Sign Out </Text>
         </View>
     );
 }
